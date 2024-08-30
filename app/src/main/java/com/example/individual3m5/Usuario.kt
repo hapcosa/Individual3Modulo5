@@ -1,10 +1,10 @@
 package com.example.individual3m5
 
 class Usuario:datos {
-    private var nombre: String = ""
-    private var edad: Int = 0
-    private var trabajo: String? = ""
-    private var referencia: Usuario? = null
+     var nombre: String = ""
+     var edad: Int = 0
+     var trabajo: String? = ""
+     var referencia: Usuario? = null
 
     constructor() {
 
@@ -29,10 +29,4 @@ class Usuario:datos {
         println("Nombre: $nombre. \nEdad: $edad. \nTrabajo: $trabajo \n$referenceText")
     }
 }
-fun main()
-{
-    val user1= Usuario("jorge",45,"Gerente Adalid",null)
-    val user2= Usuario("Pedro",32,"Awaker",user1);
-    user1.mostrarDatos()
-    user2.mostrarDatos()
-}
+

@@ -1,47 +1,23 @@
 package com.example.individual3m5
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.individual3m5.ui.theme.Individual3M5Theme
-
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            Individual3M5Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
+fun main(){
+        //Tarea 3
+        val user1= Usuario("jorge",45,"Gerente Adalid",null)
+        val user2= Usuario("Pedro",32,"Awaker",user1);
+        user1.mostrarDatos()
+        user2.mostrarDatos()
+        //Tarea 4
+        var usuarioUno :Usuario = Usuario("Gon",14,"cazador",null)
+        var usuarioDos :Usuario = Usuario("Killua",15,"cazador",usuarioUno)
+        var usuarioTres :Usuario = Usuario("Leorio",17,"cazador",usuarioDos)
+        var usuarioCuatro :Usuario = Usuario("Kurapika",17,"cazador",usuarioTres)
+        var usuarioCinco :Usuario = Usuario("Hizoka",22,"cazador",usuarioCuatro)
+        var usuarios: ListaUsuario = ListaUsuario(arrayListOf(usuarioUno,usuarioDos,usuarioTres,usuarioCuatro))
+        usuarios.agregarUsuario(usuarioCinco)
+        usuarios.mostrarDatos()
+        usuarios.eliminarUsuario("Hizoka")
+        usuarios.mostrarDatos()
+        usuarios.eliminarUsuario(usuarioUno)
+        usuarios.mostrarDatos()
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Individual3M5Theme {
-        Greeting("Android")
-    }
-}
