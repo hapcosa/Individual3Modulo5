@@ -26,7 +26,9 @@ class Usuario:datos {
         if(referencia==null){
             referenceText="Sin referencia"
         }
+        println("---------------------------------------------------------------------------------")
         println("Nombre: $nombre. \nEdad: $edad. \nTrabajo: $trabajo \n$referenceText")
+        println("---------------------------------------------------------------------------------")
     }
 }
 

@@ -5,7 +5,7 @@ class ListaUsuario:datos {
     private var lista: ArrayList<Usuario> = arrayListOf()
 
     constructor(lista: ArrayList<Usuario>) {
-        this.lista
+        this.lista = lista
     }
     constructor(){
 
@@ -23,10 +23,15 @@ class ListaUsuario:datos {
     fun eliminarUsuario(num:Int){
         this.lista.removeAt(num)
     }
+    fun mayoresQueList(limitEdad:Int): ArrayList<Usuario> {
+        return ArrayList( lista.filter{it.edad>limitEdad}.toList())
+    }
     //funcion mostrarLista() la reemplaze por la función mostrarDatos() de la interface 'datos'
     override fun mostrarDatos() {
         this.lista.forEach{ println(it.mostrarDatos())}
     }
+
+
 
 
 
