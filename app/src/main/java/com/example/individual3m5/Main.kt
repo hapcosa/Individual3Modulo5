@@ -27,7 +27,7 @@ fun main(){
     usuarios.eliminarUsuario(usuarioUno)
     usuarios.mostrarDatos()
     println("-----------------------Tarea 5-------------------------")
-    var usuariosMayores: ListaUsuario = ListaUsuario(usuarios.mayoresQueList(15))
+    var usuariosMayores: ListaUsuario = ListaUsuario(usuarios.mayoresQueList(16))
     usuariosMayores.mostrarDatos()
     println("-------------------------------------------------------")
 }
